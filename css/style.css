@@ -5,15 +5,15 @@
 body {
   margin: 0;
   font-family: Arial;
-  background-color:brown;
+  background-color:rgb(0, 0, 0);
 }
 p{
-  color: #FFE6AB;
+  color: #ffffff;
 }
 .header {
   text-align: center;
   padding: 32px;
-  color: black;
+  color: rgb(241, 234, 234);
 }
 
 .row {
