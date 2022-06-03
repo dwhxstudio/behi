@@ -1,6 +1,16 @@
-Websites:
-They are not studios or exhibition areas. But i like the ideas about data visualization. The developer/artist is Patrik Hübner.
-Website of him: https://www.patrik-huebner.com/
-Brute-Wine: http://www.brute-wine.com/
-https://www.patrik-huebner.com/work/the-pulse-a-real-time-data-reactive-living-key-visual/
-https://www.patrik-huebner.com/work/clinical-key-a-data-driven-expressive-branding-toolkit/
+# Three.js Journey
+
+## Setup
+Download [Node.js](https://nodejs.org/en/download/).
+Run this followed commands:
+
+``` bash
+# Install dependencies (only the first time)
+npm install
+
+# Run the local server at localhost:8080
+npm run dev
+
+# Build for production in the dist/ directory
+npm run build
+```
