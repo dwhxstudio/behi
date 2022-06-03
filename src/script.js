@@ -39,7 +39,7 @@ const scene = new THREE.Scene();
 var textures = [];
 
 const textureLoader = new THREE.TextureLoader();
-const particleTexture = textureLoader.load("/textures/particles/8.png");
+const particleTexture = textureLoader.load("./textures/particles/8.png");
 for (var i = 0; i < data.length; i++) {
   textures.push(textureLoader.load(data[i].path));
 }
