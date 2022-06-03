@@ -14,10 +14,8 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        {
-          from: path.resolve(__dirname, "../static"),
-          from: path.resolve(__dirname, "../src/.nojekyll"),
-        },
+        { from: path.resolve(__dirname, "../static") },
+        { from: path.resolve(__dirname, "../src/.nojekyll") },
       ],
     }),
     new HtmlWebpackPlugin({
