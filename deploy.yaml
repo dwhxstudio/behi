@@ -1,16 +1,32 @@
-name: Deploy to GitHub pages
-on:
-  push:
-    # this is the branch where you develop your site
-    # as discussed in the publishing sources section
-    # this can change if you are using an user/organization repo
-    branches: [main]
+name: "Deployment"
+# the event that will trigger the action
+on: push
+
+# what the action will do
 jobs:
-  build:
+  test:
+    # the operating system it will run on
     runs-on: ubuntu-latest
+    # the list of steps that the action will go through
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a multi-line script
+      - name: "Checkout"
+        uses: actions/checkout@v2
+      - name: Get yarn cache directory path # get yarn cache path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2 # cache yarn
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: "Install Dependencies"
+        run: yarn
+      - name: "Github Pages Deployment"
         run: |
-          echo test the checkout action,
-          ls -a
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/dwhxstudio/behi.git
+          yarn deploy -u "github-actions-bot <support+actions@github.com>"
+        if: ${{ github.ref == 'refs/heads/main' }} # only deploy main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
