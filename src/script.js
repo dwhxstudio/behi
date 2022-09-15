@@ -66,7 +66,7 @@ particlesMaterial.alphaMap = particleTexture;
 particlesMaterial.depthTest = false;
 
 const positions = new Float32Array(count * 3);
-const img_positions = new Float32Array(img_count * 3);
+const img_positions = new Float32Array(data.length * 3);
 // Multiply by 3 because each position is composed of 3 values (x, y, z)
 
 for (
@@ -81,7 +81,7 @@ for (
 
 for (
   let i = 0;
-  i < img_count * 3;
+  i < data.length * 3;
   i++ // Multiply by 3 for same reason
 ) {
   img_positions[i] = (Math.random() - 0.5) * 30;
@@ -105,7 +105,7 @@ const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 const images = new THREE.Points(imageGeometry, imageMaterial);
 
 var planes_img = [];
-planes_img = planes(img_count, textures);
+planes_img = planes(data.length, textures);
 
 // scene.add(plane);
 planes_img.forEach((plane) => {
