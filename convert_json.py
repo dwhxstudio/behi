@@ -5,7 +5,7 @@ data = []
 # images = sorted(glob.glob("./textures/ss/*.jpg"))
 images = sorted(glob.glob("./textures/shots/*"))
 for path in images:
-    item = {"path": str(path).replace('./', '/')}
+    item = {"path": "."+str(path).replace('./', '/')}
     data.append(item)
 print(data)
 jsonData = json.dumps(data)
