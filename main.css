@@ -16,17 +16,15 @@ html{
     outline: none;
 }
 
-#common{
-    align-items: center;
-}
+
 
 .titles{
     display: flex;
-    color: #FA4EAB;
+    color: #FFEA00;
     align-items: center;
     height: 100vh;
     font-family: 'DREAMS', sans-serif;
-    font-size: 1vmin;
+    font-size: calc((1rem + 1vw)/2);
     padding-left: 10%;
     padding-right: 10%;
     position: relative;
@@ -35,23 +33,5 @@ html{
 
 }
 
-.section
-{
-    display: flex;
-    color: #FA4EAB;
-    align-items: center;
-    height: 100vh;
-    /* font-family: 'Cabin', sans-serif; */
-    font-family: 'DREAMS', sans-serif;
-    font-size: 0;
-    padding-left: 10%;
-    padding-right: 10%;
-    color: transparent;
-}
-
-section:nth-child(odd)
-{
-    justify-content: flex-end;
-}
 
 /*# sourceMappingURL=main.css.map*/
