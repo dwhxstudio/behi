@@ -3,7 +3,7 @@ import json
 
 data = []
 # images = sorted(glob.glob("./textures/ss/*.jpg"))
-images = sorted(glob.glob("./textures/shots/*"))
+images = sorted(glob.glob("./textures/deformed_shots/*"))
 for path in images:
     item = {"path": "."+str(path).replace('./', '/')}
     data.append(item)
