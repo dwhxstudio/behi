@@ -9,7 +9,8 @@ from PIL import Image
 import imgaug as ia
 import imgaug.parameters as iap
 
-path = "/Users/kvn/Documents/backyard/behi/static/textures/ss/"
+path = "/Users/kvn/deformed_shots/"
+path_to_save = "/Users/kvn/deformed_shots/"
 images = os.listdir(path)
 
 aug_affine_gaussian = iaa.Sequential([
@@ -46,14 +47,15 @@ for i in images:
 
         w, h = image.size
         # print(image.size)
-        output_size = 600
+        output_size = 1000
         bin_size = w // output_size
         img = np.array(image, dtype='uint8')
         img_shaped = img[:, :, 0:3]
-        resized_image = cv2.resize(img_shaped, dsize=(int(w / bin_size),
-                                                      int(h / bin_size)),)
+        resized_image = cv2.resize(img_shaped, dsize=(int(output_size),
+                                                      int(output_size)),)
         aug = random.choice(aug_list)
 
         images_aug = [aug(image=resized_image)]
-        ia.imshow(ia.draw_grid(images_aug))
-        imageio.imwrite(path + filename+file_extension, images_aug[0])
+        # ia.imshow(ia.draw_grid(images_aug))
+        imageio.imwrite(path_to_save + filename +
+                        file_extension, images_aug[0])

@@ -51,14 +51,12 @@ const imageGeometry = new THREE.BufferGeometry();
 
 const count = 5000;
 
-const img_count = 500;
-
 const particlesMaterial = new THREE.PointsMaterial();
 particlesMaterial.size = 0.3;
 particlesMaterial.sizeAttenuation = true;
 
 const imageMaterial = new THREE.PointsMaterial();
-imageMaterial.size = 2;
+imageMaterial.size = 30;
 imageMaterial.sizeAttenuation = true;
 
 particlesMaterial.transparent = true;
@@ -194,6 +192,14 @@ document.onkeydown = function (evt) {
     }
   }
 };
+
+// function myFunction() {
+//   var x = document.getElementById("snackbar");
+//   x.className = "show";
+//   setTimeout(function () {
+//     x.className = x.className.replace("show", "");
+//   }, 10000);
+// }
 
 const objectsDistance = 4;
 /**

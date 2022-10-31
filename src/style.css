@@ -24,7 +24,7 @@ html{
     align-items: center;
     height: 100vh;
     font-family: 'DREAMS', sans-serif;
-    font-size: calc((1rem + 1vw)/2);
+    font-size: calc((1rem + 1vw)/3);
     padding-left: 10%;
     padding-right: 10%;
     position: relative;
@@ -32,3 +32,4 @@ html{
 
 
 }
+
